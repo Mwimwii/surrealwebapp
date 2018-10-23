@@ -1,0 +1,4 @@
+#remove node_modules from github commits
+**/node_modules/**
+#remove .env & keys.js from github commits
+/config/keys.js

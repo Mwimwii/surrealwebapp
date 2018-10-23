@@ -1,0 +1,89 @@
+doctype html
+html
+    //- [HEAD]
+    head
+        //- Meta
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        //- Title of Web Page
+        title= title
+        //- Favicon Icon
+        link(rel="icon", href="/favicon.ico", type="image/x-icon")
+        //- Bootstrap v4.1.3 CSS
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+        //- Custom StyleSheet
+        link(rel="stylesheet", href="/stylesheets/style.css")
+        //- If Needed
+        block css
+
+        block head
+    //- [BODY]
+    body
+        //- Container-Fluid (Full Width)
+        div(class="container-fluid")
+            div(class="row")
+                //- Left Panels
+                div(class="col-3")
+                    //- top row
+                    div(class="row")
+
+                        div(class="col-6")
+                            block panel 1
+
+                        div(class="col-6")
+                            block panel 2
+                    //- bottom row
+                    div(class="row")
+
+                        div(class="col-6")
+                            block panel 3
+
+                        div(class="col-6")
+                            block panel 4
+
+                //- Website Focus
+                div(class="col-6")
+                    //- Navigation
+                    div(class="row")
+                        //- Alt Navigation (Button Icons)
+                        div(class="col-3")
+                            //- Button Group
+                            div(class="")
+                        //- Main Navigation (Web Links)
+                        div(class="col-9")
+                            //- Navbar
+                            div(class="")
+                    //- Main Website
+                    div(class="row")
+                        //- Sidebar Section
+                        div(class="col-2")
+                            //- mainSidebar
+                            div(class="mainSidebar")
+                        
+                        //- Content Section
+                        div(class="col-10")
+                    
+                    //- Footer
+                    div(class="row")
+                        //- (!) Edit Footer Area Later
+
+
+                //- Right Panels
+                div(class="col-3")
+                    //- top row
+                    div(class="row")
+
+                        div(class="col-6")
+                            block panel 5
+
+                        div(class="col-6")
+                            block panel 6
+                    //- bottom row
+                    div(class="row")
+
+                        div(class="col-6")
+                            block panel 7
+
+                        div(class="col-6")
+                            block panel 8

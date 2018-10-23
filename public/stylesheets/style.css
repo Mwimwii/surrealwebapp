@@ -1,0 +1,27 @@
+html,
+body {
+    background-color: black!important;
+    background: black!important;
+}
+
+
+/* Entire Site CSS */
+
+*>a {
+    /* this might need to be changed, if styling on an a element needs to be unique */
+    background: transparent!important;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* ======
+   Panels 
+   ====== */
+
+.panel {
+    width: 100%!important;
+    height: 100%!important;
+}
+
+.panel-default {}
