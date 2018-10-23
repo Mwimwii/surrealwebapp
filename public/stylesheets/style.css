@@ -24,4 +24,6 @@ body {
     height: 100%!important;
 }
 
-.panel-default {}
+.panel-default {
+    border: 1px solid white;
+}
