@@ -1,0 +1,11 @@
+{
+  "name": "redr0adsurrealapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "redr0ad",
+  "license": "MIT"
+}
