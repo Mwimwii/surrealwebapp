@@ -2,3 +2,5 @@
 **/node_modules/**
 #remove .env & keys.js from github commits
 /config/keys.js
+#remove .env config
+.env
