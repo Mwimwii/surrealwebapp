@@ -7,6 +7,45 @@ body {
 
 /* Entire Site CSS */
 
+.fa-campground {
+    background-image: linear-gradient(135deg, orange, orange 60%, cyan);
+}
+
+h6 {
+    vertical-align: middle;
+}
+
+.no-padd-right {
+    /* helps panels on the left look clean & even */
+    padding-right: 0px;
+}
+
+.no-padd-left {
+    /* helps panels on the right look clean & even */
+    padding-left: 0px;
+}
+
+.no-gutters {
+    /* helps with how I want the site to be styled, 
+    using it on the main site section */
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.no-gutters>.col,
+.no-gutters>[class*="col-"] {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-color: white;
+}
+
 *>a {
     /* this might need to be changed, if styling on an a element needs to be unique */
     background: transparent!important;
@@ -14,16 +53,91 @@ body {
     color: white;
 }
 
+#no-padd {
+    padding: 0px!important;
+}
 
-/* ======
-   Panels 
-   ====== */
+
+/*  ============
+    Main Section:           Navigation
+    ============ */
+
+.navbar {
+    /* edit of the bootstrap .navbar class */
+    background: transparent!important;
+    background-color: transparent!important;
+    min-height: 30px;
+    max-height: 30px;
+    height: 30px;
+}
+
+
+/*  ============
+    Main Section:           Content
+    ============ */
+
+.contentMain,
+.sidebarMain {
+    background: transparent!important;
+    background-color: transparent!important;
+    min-height: 100%!important;
+    max-height: 100%!important;
+    height: 500px;
+    padding: 10px!important;
+    overflow: hidden!important;
+}
+
+.contentMain {
+    border-left: 0px;
+    border-right: 1px;
+    border-top: 0px;
+    border-bottom: 1px;
+    border-color: white;
+    border-style: solid;
+    border-bottom-right-radius: .25rem!important;
+}
+
+.sidebarMain {
+    border-left: 1px;
+    border-right: 1px;
+    border-top: 0px;
+    border-bottom: 1px;
+    border-color: white;
+    border-style: solid;
+    border-bottom-left-radius: .25rem!important;
+}
+
+
+/*  ======
+    Panels 
+    ====== */
 
 .panel {
     width: 100%!important;
     height: 100%!important;
+    border: 1px solid;
+    z-index: 1;
+    position: relative;
+}
+
+.panelTitle {
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}
+
+.panelBody {
+    padding: 10px;
+    color: white;
+    font-weight: normal;
+    border: 0px;
 }
 
 .panel-default {
-    border: 1px solid white;
+    border-color: white;
+}
+
+.panel-info {
+    border-color: gold;
 }
