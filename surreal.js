@@ -8,6 +8,9 @@ var logger = require('morgan');
 
 var mongo = require('mongoose');
 
+// [Set Up Passport]
+var passportSetup = require('./config/passport-setup');
+
 var indexRouter = require('./routes');
 var usersRouter = require('./routes/users');
 var authRoutes = require('./routes/oAuth');

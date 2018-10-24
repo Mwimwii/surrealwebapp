@@ -1,4 +1,5 @@
 var router = require('express').Router();
+var passport = require('passport');
 
 /**
  * Router that handles User login/logout,
@@ -16,13 +17,13 @@ router.get('/logout', function(req, res) {
 });
 
 // oAuth Google Login
-router.get('/google', function(req, res) {
-    res.send('logging in with google');
-});
+router.get('/google', passport.authenticate('google', {
+    scope: ['profile']
+}));
 
 // oAuth Spotify Login
-router.get('/spotify', function(req, res) {
-    res.send('logging in with spotify');
-});
+router.get('/spotify', passport.authenticate('spotify', {
+    scope: ['']
+}));
 
 module.exports = router;
