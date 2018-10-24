@@ -11,9 +11,11 @@ html
         //- Favicon Icon
         link(rel="icon", href="/favicon.ico", type="image/x-icon")
         //- Bootstrap v4.1.3 CSS
-        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", crossorigin="anonymous")
         //- Custom StyleSheet
         link(rel="stylesheet", href="/stylesheets/style.css")
+        //- Font-Awesome Icons
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.4.1/css/all.css", integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz", crossorigin="anonymous")
         //- If Needed
         block css
 
@@ -28,44 +30,63 @@ html
                     //- top row
                     div(class="row")
 
-                        div(class="col-6")
-                            block panel 1
+                        div(class="col-6 no-padd-right")
+                            block panel1
 
-                        div(class="col-6")
-                            block panel 2
+                        div(class="col-6 no-padd-right")
+                            block panel2
                     //- bottom row
                     div(class="row")
 
                         div(class="col-6")
-                            block panel 3
+                            block panel3
 
                         div(class="col-6")
-                            block panel 4
+                            block panel4
 
                 //- Website Focus
                 div(class="col-6")
                     //- Navigation
-                    div(class="row")
+                    div(class="row border border-white rounded-top no-gutters")
                         //- Alt Navigation (Button Icons)
                         div(class="col-3")
                             //- Button Group
-                            div(class="")
+                            div(class="btn-group")
+                                button(type="button", class="btn btn-surreal")
+                                    a(href="/")
+                                        i(class="fa fa-campground")
+                                if !alien
+                                    //- login
+                                    button(type="button", class="btn btn-surreal")
+                                    a(href="/auth/login")
+                                        i(class="fas fa-sign-in-alt")
+                                else
+                                    //- user profile
+                                    button(type="button", class="btn btn-surreal")
+                                    a(href="/user/profile")
+                                        i(class="fas fa-user")
+                                    //- log out
+                                    button(type="button", class="btn btn-surreal")
+                                    a(href="/auth/login")
+                                        i(class="fas fa-sign-out-alt")
                         //- Main Navigation (Web Links)
                         div(class="col-9")
                             //- Navbar
                             div(class="")
                     //- Main Website
-                    div(class="row")
+                    div(class="row no-gutters")
                         //- Sidebar Section
                         div(class="col-2")
-                            //- mainSidebar
-                            div(class="mainSidebar")
+                            //- Main Sidebar
+                            block sidebarMain
                         
                         //- Content Section
                         div(class="col-10")
+                            //- Main Content
+                            block contentMain
                     
                     //- Footer
-                    div(class="row")
+                    div(class="row no-gutters")
                         //- (!) Edit Footer Area Later
 
 

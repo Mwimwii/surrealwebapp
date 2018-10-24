@@ -1,5 +1,26 @@
-extends layout
+extends ../layout/default
 
-block content
-  h1= title
-  p Welcome to #{title}
+block sidebarMain
+    div(class="sidebarMain")
+        h6(class="badge badge-success") SIDEBAR TITLE
+
+block contentMain
+    div(class="contentMain")
+        h6(class="badge badge-warning") TODO: REMAKE APP
+        hr
+        div(class="panel panel-info rounded")
+            h6 Hmmm... 
+
+block panel1
+    div(class="panel panel-default rounded", id="panel-one")
+        div(class="panelTitle")
+            h6 hello 1
+        div(class="panelBody")
+            p ayylmao ayylmao ayylmao ayylmao ayylmao
+
+block panel2
+    div(class="panel panel-default rounded", id="panel-one")
+        div(class="panelTitle")
+            h6 hello 2
+        div(class="panelBody")
+            p ayylmao ayylmao ayylmaoooo

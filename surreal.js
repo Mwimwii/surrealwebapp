@@ -10,21 +10,28 @@ var mongo = require('mongoose');
 
 var indexRouter = require('./routes');
 var usersRouter = require('./routes/users');
+var authRoutes = require('./routes/oAuth');
 
 var app = express();
 
-// view engine setup
+// [Set Up Views]
 app.set('views', path.join(__dirname, 'templates'));
+// [Set Up View Engine]
 app.set('view engine', 'pug');
 
+// [Set Up Options & Lib]
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// [Set Up Static Files Route]
 app.use(express.static(path.join(__dirname, 'public')));
 
+// [Set Up Routes]
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/auth', authRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,7 +46,7 @@ app.use(function(err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.render('errors/error');
 });
 
 module.exports = app;

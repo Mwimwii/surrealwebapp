@@ -1,0 +1,47 @@
+extends ../layout/default
+//- "alien" = "user"
+block sidebarMain
+    div(class="sidebarMain")
+        h6(class="badge badge-success") USER PROFILE
+        hr
+        if !alien
+            p you are not logged in
+        else
+            p you are logged in
+
+block contentMain
+    //- div element between row/col sequence
+    div(class="contentMain")
+        //- title of contentMain
+        div(class="row")
+            div(class="col-6 contentMaintitle")
+                if !alien
+                    h6 no user detected! log in or create an account
+                    hr
+                else
+                    h6= alien.googleName
+                    hr
+        div(class="row")
+            div(class="col-6 contentMaininfo")
+                if !alien
+                    
+
+        //- body of contentMain
+        div(class="contentMainbody")
+            if !alien
+                //- sign up form
+
+
+block panel1
+    div(class="panel panel-default rounded", id="panel-one")
+        div(class="panelTitle")
+            h6 hello 1
+        div(class="panelBody")
+            p ayylmao ayylmao ayylmao ayylmao ayylmao
+
+block panel2
+    div(class="panel panel-default rounded", id="panel-one")
+        div(class="panelTitle")
+            h6 hello 2
+        div(class="panelBody")
+            p ayylmao ayylmao ayylmaoooo

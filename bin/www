@@ -12,6 +12,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
+//  process.env.PORT is set to 3000 in .env
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -87,4 +88,5 @@ function onListening() {
         'pipe ' + addr :
         'port ' + addr.port;
     debug('Listening on ' + bind);
+    console.log('app now started on:' + addr.port);
 }
