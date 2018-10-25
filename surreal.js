@@ -2,19 +2,26 @@ require('dotenv').config();
 
 var createError = require('http-errors');
 var express = require('express');
+var http = require('http').Server(express);
+var io = require('socket.io')(http);
 var path = require('path');
+var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var flash = require('connect-flash');
 
-var mongo = require('mongoose');
+// [Databse]
+var mongodb = require('mongoose');
 
-// [Set Up Passport]
+// [Import Passport-Setup]
 var passportSetup = require('./config/passport-setup');
 
-var indexRouter = require('./routes');
-var usersRouter = require('./routes/users');
+// [Import Routes]
+var indexRoutes = require('./routes');
+var usersRoutes = require('./routes/users');
 var authRoutes = require('./routes/oAuth');
 
+// [Init Express as App]
 var app = express();
 
 // [Set Up Views]
@@ -32,16 +39,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // [Set Up Routes]
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', indexRoutes);
+app.use('/users', usersRoutes);
 app.use('/auth', authRoutes);
 
-// catch 404 and forward to error handler
+// [404]
 app.use(function(req, res, next) {
+    // catch 404 and forward to error handler
     next(createError(404));
 });
 
-// error handler
+// [Error Handler]
 app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
