@@ -22,13 +22,26 @@ router.get('/logout', function(req, res) {
 // = ( SoundCloud, Instagram & Facebook Soon... )
 
 // oAuth Google Login
+// ==================
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
 
+router.get('/google/redirect', passport.authenticate('google'),
+    function(req, res) {
+        res.send('you reached the callback url');
+    });
+
 // oAuth Spotify Login
+// ===================
 router.get('/spotify', passport.authenticate('spotify', {
     scope: ['']
 }));
 
+router.get('/spotify/redirect', passport.authenticate('spotify'),
+    function(req, res) {
+        res.send('you reached the callback url');
+    });
+
+// export 
 module.exports = router;

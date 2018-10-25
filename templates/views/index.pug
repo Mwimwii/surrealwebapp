@@ -2,14 +2,19 @@ extends ../layout/default
 
 block sidebarMain
     div(class="sidebarMain")
-        h6(class="badge badge-success") SIDEBAR TITLE
+        center
+            h6(class="badge badge-success") SIDEBAR TITLE
+        hr
+        center
+            a(href="/auth/google", class="badge badge-warning") Google Auth
+            a(href="/auth/spotify", class="badge badge-warning") Spotify Auth
 
 block contentMain
     div(class="contentMain")
-        h6(class="badge badge-warning") TODO: REMAKE APP
+        h6(class="badge badge-success") Index
         hr
-        div(class="panel panel-info rounded")
-            h6 Hmmm... 
+        div(class="border border-warning rounded")
+            p flash warning
 
 block panel1
     div(class="panel panel-default rounded", id="panel-one")

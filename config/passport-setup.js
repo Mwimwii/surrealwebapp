@@ -9,8 +9,9 @@ passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET
     },
-    function() {
-        //google callback function
+    function(accessToken, refreshToken, expires_in, profile, done) {
+        console.log('passport callback function fired.');
+        console.log(profile);
     }));
 
 passport.use(new SpotifyStrategy({
@@ -18,6 +19,6 @@ passport.use(new SpotifyStrategy({
         clientID: process.env.SPOTIFY_CLIENT_ID,
         clientSecret: process.env.SPOTIFY_CLIENT_SECRET
     },
-    function() {
-        //spotify callback function
+    function(accessToken, refreshToken, expires_in, profile, done) {
+        console.log(profile);
     }));
