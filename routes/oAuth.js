@@ -8,7 +8,7 @@ var passport = require('passport');
 
 // oAuth Login
 router.get('/login', function(req, res) {
-    res.render('views/login', { title: 'Login' });
+    res.render('views/auth/login', { title: 'Login' });
 });
 // oAuth Logout
 router.get('/logout', function(req, res) {

@@ -1,0 +1,33 @@
+/* /user CSS */
+
+#user-sb {
+    /* user sidebar container */
+    width: 100%!important;
+    padding: 10px;
+    margin: 0px;
+    color: white;
+    font-family: 'Raleway';
+}
+
+#user-sb-title {
+    /* sidebar title */
+    padding: 5px;
+    border-top: 0px;
+    border-bottom: 1px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: white;
+}
+
+.btn-surreal-danger {
+    border-color: red!important;
+    padding: 5px;
+    margin: 0px;
+}
+
+.btn-surreal-warning {
+    border-color: gold!important;
+    padding: 5px;
+    margin: 0px;
+}

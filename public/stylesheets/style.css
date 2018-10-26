@@ -7,12 +7,13 @@ body {
 
 /* Entire Site CSS */
 
-.fa-campground {
-    background-image: linear-gradient(135deg, orange, orange 60%, cyan);
+i.fa-campground {
+    color: linear-gradient(135deg, orange, orange 60%, cyan);
 }
 
 h6 {
-    vertical-align: middle;
+    vertical-align: top!important;
+    margin-bottom: 0px!important;
 }
 
 .no-padd-right {
@@ -54,6 +55,7 @@ hr {
 }
 
 #no-padd {
+    /* might not use this anymore */
     padding: 0px!important;
 }
 
@@ -62,13 +64,20 @@ hr {
     Main Section:           Navigation
     ============ */
 
-.navbar {
-    /* edit of the bootstrap .navbar class */
+.navbar,
+.btn-group {
     background: transparent!important;
     background-color: transparent!important;
     min-height: 30px;
     max-height: 30px;
     height: 30px;
+}
+
+.btn-surreal {
+    background-color: transparent!important;
+    color: white;
+    height: 30px;
+    padding: 5%;
 }
 
 
@@ -114,7 +123,7 @@ hr {
 
 .panel {
     width: 100%!important;
-    height: 100%!important;
+    height: 100%!;
     border: 1px solid;
     z-index: 1;
     position: relative;
@@ -136,6 +145,8 @@ hr {
 
 .panel-default {
     border-color: white;
+    min-height: 250px!important;
+    margin-bottom: 15px;
 }
 
 .panel-info {
