@@ -1,12 +1,52 @@
 extends ../../../layout/default.pug
 
+block css
+    //- Needed for the Map to work
+    link(rel='stylesheet', href='https://unpkg.com/leaflet@1.2.0/dist/leaflet.css')
+    script(src='https://unpkg.com/leaflet@1.2.0/dist/leaflet.js')
+
 block sidebarMain
 
-    h6(class="badge badge-warning") Statistics Map
+    div(class="sidebarMain")
+        h6(class="badge badge-success") Statistics Map
+        hr
+        //- later on there is an if statement to determine if theres a user on the page
 
 block contentMain
 
-    div(class="mapid")
+    div(id="map")
+
+block panel1
+
+    div(class="panel panel-default rounded invisible", id="panel-one")
+        div(class="panelTitle")
+            h6 undefined
+        div(class="panelBody")
+            p undefined
+
+block panel2
+
+    div(class="panel panel-default rounded invisible", id="panel-two")
+        div(class="panelTitle")
+            h6 undefined
+        div(class="panelBody")
+            p undefined
+
+block panel3
+
+    div(class="panel panel-default rounded invisible", id="panel-three")
+        div(class="panelTitle")
+            h6 undefined
+        div(class="panelBody")
+            p undefined
+
+block panel4
+
+    div(class="panel panel-default rounded invisible", id="panel-four")
+        div(class="panelTitle")
+            h6 undefined
+        div(class="panelBody")
+            p undefined
 
 block panel5
 

@@ -1,4 +1,4 @@
-extends ../layout/default
+extends ../../layout/default
 //- "alien" = "user"
 block sidebarMain
     div(class="sidebarMain")
@@ -6,6 +6,9 @@ block sidebarMain
         hr
         if !alien
             p you are not logged in
+            p create an account with google or spotify below
+            a(href="/auth/google", class="badge badge-warning") Google Auth
+            a(href="/auth/spotify", class="badge badge-warning") Spotify Auth
         else
             p you are logged in
 
@@ -16,15 +19,14 @@ block contentMain
         div(class="row")
             div(class="col-6 contentMaintitle")
                 if !alien
-                    h6 no user detected! log in or create an account
+                    h6(class="badge badge-danger") no user detected!
+                    h6(class="badge badge-warning") log in or create an account
                     hr
                 else
-                    h6= alien.googleName
+                    h6(class="badge badge-success") logged in
                     hr
         div(class="row")
-            div(class="col-6 contentMaininfo")
-                if !alien
-                    
+            div(class="col-6 contentMaininfo")    
 
         //- body of contentMain
         div(class="contentMainbody")

@@ -26,11 +26,18 @@ html
     body
         //- Container-Fluid (Full Width)
         div(class="container-fluid")
+            //- Header Row
+            div(class="row")
+                div(class="col-12")
+                    //- Header Container
+                    div(id="siteHeader")
+
+            //- Main Site Row
             div(class="row")
                 //- Left Panels
                 div(class="col-3")
                     //- top row
-                    div(class="row")
+                    div(class="row", id="panelrowtop")
 
                         div(class="col-6 no-padd-right")
                             block panel1
@@ -48,7 +55,7 @@ html
 
                 //- Website Focus
                 div(class="col-6")
-                    //- Navigation
+                    //- Top Navigation
                     div(class="row border border-white rounded-top no-gutters")
                         //- Alt Navigation (Button Icons)
                         div(class="col-2")
@@ -87,7 +94,7 @@ html
                             //- Main Content
                             block contentMain
                     
-                    //- Footer
+                    //- Bottom Navigation
                     div(class="row no-gutters")
                         //- (!) Edit Footer Area Later
 
@@ -95,7 +102,7 @@ html
                 //- Right Panels
                 div(class="col-3")
                     //- top row
-                    div(class="row")
+                    div(class="row", id="panelrowtop")
 
                         div(class="col-6 no-padd-left")
                             block panel5
@@ -110,3 +117,7 @@ html
 
                         div(class="col-6 no-padd-left")
                             block panel8
+            //- Footer Row
+            div(class="row")
+                div(class="col-12")
+                    div(id="siteFooter")

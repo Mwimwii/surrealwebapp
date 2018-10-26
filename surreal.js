@@ -9,11 +9,22 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// var art = require('ascii-art');
+
 // [Databse]
 var mongodb = require('mongoose');
 // connect to database (mongodb)
-mongodb.connect(process.env.MONGODB_URL, function() {
-    console.log("Connected to the Database (MongoDB)");
+var mdb = "[MongoDB]> ";
+var db_success = "Connected to the Database";
+db_failure = "Error Connecting to the Database... ";
+// art.style(db_success, 'green');
+// art.style(db_failure, 'red');
+mongodb.connect(process.env.MONGODB_URL, function(error) {
+    if (error) {
+        console.log(mdb + db_failure + error);
+    } else {
+        console.log(mdb + db_success);
+    }
 });
 
 // [Import Passport-Setup]
@@ -23,7 +34,7 @@ var passportSetup = require('./config/passport-setup');
 var indexRoutes = require('./routes');
 var userRoutes = require('./routes/user');
 // var usersRoutes = require('./routes/users');
-var authRoutes = require('./routes/oAuth');
+var authRoutes = require('./routes/oauth');
 
 // [Init Express as App]
 var app = express();

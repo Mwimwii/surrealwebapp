@@ -47,9 +47,10 @@ hr {
     border-color: white;
 }
 
-*>a {
+*>a,
+p {
     /* this might need to be changed, if styling on an a element needs to be unique */
-    background: transparent!important;
+    /* background: transparent!important; */
     text-decoration: none;
     color: white;
 }
@@ -61,6 +62,18 @@ hr {
 
 
 /*  ============
+    Header Section:          Navigation
+    ============ */
+
+#siteHeader,
+#siteFooter {
+    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
+}
+
+
+/*  ============
     Main Section:           Navigation
     ============ */
 
@@ -68,9 +81,10 @@ hr {
 .btn-group {
     background: transparent!important;
     background-color: transparent!important;
-    min-height: 30px;
-    max-height: 30px;
-    height: 30px;
+    min-height: 28px;
+    max-height: 28px;
+    height: 28px;
+    overflow: hidden;
 }
 
 .btn-surreal {
@@ -117,6 +131,21 @@ hr {
 }
 
 
+/*  ============
+    Main Section:           SideBar
+    ============ */
+
+.sidebarTitle {
+    /* will be for the sidebar title */
+}
+
+.sidebarBody {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+
 /*  ======
     Panels 
     ====== */
@@ -130,10 +159,22 @@ hr {
 }
 
 .panelTitle {
-    padding: 10px;
+    height: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    /* padding: 10px; */
     color: white;
     font-weight: bold;
     border-bottom: 1px solid white;
+}
+
+.panelTitle>h6 {
+    height: 100%!important;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    text-align: center!important;
 }
 
 .panelBody {
@@ -145,10 +186,15 @@ hr {
 
 .panel-default {
     border-color: white;
-    min-height: 250px!important;
-    margin-bottom: 15px;
+    min-height: 257.5px!important;
 }
 
 .panel-info {
     border-color: gold;
+}
+
+#panelrowtop {
+    /* so that there is a 15px margin
+    between the top and bottom row of panels */
+    margin-bottom: 15px;
 }
