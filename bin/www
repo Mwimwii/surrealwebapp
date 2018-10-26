@@ -88,5 +88,5 @@ function onListening() {
         'pipe ' + addr :
         'port ' + addr.port;
     debug('Listening on ' + bind);
-    console.log('app now started on:' + addr.port);
+    console.log('[SurrealApp] application live at http://localhost:' + addr.port);
 }

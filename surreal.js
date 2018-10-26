@@ -10,11 +10,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // var art = require('ascii-art');
+var cookieSession = require('cookie-session');
+var passport = require('passport');
 
 // [Databse]
 var mongodb = require('mongoose');
 // connect to database (mongodb)
-var mdb = "[MongoDB]> ";
+var mdb = "[MongoDB] ";
 var db_success = "Connected to the Database";
 db_failure = "Error Connecting to the Database... ";
 // art.style(db_success, 'green');
@@ -43,6 +45,14 @@ var app = express();
 app.set('views', path.join(__dirname, 'templates'));
 // [Set Up View Engine]
 app.set('view engine', 'pug');
+
+// [Set Up User Session & Options]
+app.use(cookieSession({
+    maxAge: 24 * 60 * 60 * 1000,
+    keys: [process.env.SESSION_COOKIE_KEY]
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // [Set Up Options & Lib]
 app.use(logger('dev'));
