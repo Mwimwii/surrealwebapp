@@ -10,15 +10,15 @@ passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET
     },
-    function(accessToken, refreshToken, expires_in, profile, done) {
-        console.log('');
+    function(accessToken, refreshToken, profile, done) {
+        console.log('Google callback function fired');
         console.log(profile);
         // a-syncronous task
         new User({
             googleId: profile.id,
             googleName: profile.displayName,
             googleImg: profile._json.image.url
-        }).save().then((newUser), function(req, res) {
+        }).save().then(function(newUser) {
             console.log('new user created: ' + newUser);
         })
     }));

@@ -1,0 +1,1 @@
+// maybe this class can be a template for map data storage

@@ -35,7 +35,19 @@ router.get('/google/redirect', passport.authenticate('google'),
 // oAuth Spotify Login
 // ===================
 router.get('/spotify', passport.authenticate('spotify', {
-    scope: ['']
+    scope: [
+        'user-read-private',
+        'user-read-birthdate',
+        'user-read-email',
+        'user-read-playback-state',
+        'user-read-currently-playing',
+        'user-follow-read',
+        'user-top-read',
+        'user-read-recently-played',
+        'user-library-read',
+        'playlist-read-private',
+        'playlist-read-collaborative'
+    ]
 }));
 
 router.get('/spotify/redirect', passport.authenticate('spotify'),
