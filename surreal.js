@@ -11,13 +11,18 @@ var logger = require('morgan');
 
 // [Databse]
 var mongodb = require('mongoose');
+// connect to database (mongodb)
+mongodb.connect(process.env.MONGODB_URL, function() {
+    console.log("Connected to the Database (MongoDB)");
+});
 
 // [Import Passport-Setup]
 var passportSetup = require('./config/passport-setup');
 
 // [Import Routes]
 var indexRoutes = require('./routes');
-var usersRoutes = require('./routes/users');
+var userRoutes = require('./routes/user');
+// var usersRoutes = require('./routes/users');
 var authRoutes = require('./routes/oAuth');
 
 // [Init Express as App]
@@ -39,7 +44,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // [Set Up Routes]
 app.use('/', indexRoutes);
-app.use('/users', usersRoutes);
+app.use('/user', userRoutes);
+// app.use('/users', usersRoutes);
 app.use('/auth', authRoutes);
 
 // [404]
