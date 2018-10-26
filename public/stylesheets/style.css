@@ -84,14 +84,14 @@ p {
     min-height: 28px;
     max-height: 28px;
     height: 28px;
-    overflow: hidden;
+    width: 100%!important;
 }
 
 .btn-surreal {
     background-color: transparent!important;
     color: white;
-    height: 30px;
-    padding: 5%;
+    height: 28px;
+    /* padding: 5%; */
 }
 
 

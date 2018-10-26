@@ -8,9 +8,27 @@ block sidebarMain
         a(href="/auth/spotify", class="badge badge-warning") Spotify Auth
 
 block contentMain
+    //- Main Area for Content
     div(class="contentMain")
-        h6(class="badge badge-success")= title
-        hr
+        //- contentMain Header Row
+        div(class="row")
+            //- contentMain Title Column
+            div(class="col-6")
+                h6(class="badge badge-success")= title
+                hr
+            //- contentMain Extra Column (flash messages?)
+            div(class="col-6")
+        //- contentMain Body Row
+        div(class="row")
+            //- Left Side
+            div(class="col-6")
+                //- New User
+                div(id="new-user-create")
+                    h6 First time here?
+                    a(href="/auth/login", class="badge badge-info")
+                        p Create a new Account
+            //- Right Side
+            div(class="col-6")
         div(class="border border-warning rounded")
             p styling for flash message warnings
 
