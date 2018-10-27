@@ -12,9 +12,9 @@ router.get('/login', function(req, res) {
 });
 // oAuth Logout
 router.get('/logout', function(req, res) {
-    // todo: code redirect url, and a flash message to show on the
-    // webpage that says "logged out"
-    res.send('logging out...');
+    req.logout();
+    console.log('user logged out');
+    res.redirect('/');
 });
 
 // == Third Party Login Options

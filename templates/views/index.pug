@@ -2,7 +2,10 @@ extends ../layout/default
 
 block sidebarMain
     div(class="sidebarMain")
-        h6(class="badge badge-success") SIDEBAR TITLE
+        if !alien.displayName
+            h6(class="badge badge-warning") User
+        else
+            h6(class="badge badge-success")= alien.userName
         hr
         a(href="/auth/google", class="badge badge-warning") Google Auth
         a(href="/auth/spotify", class="badge badge-warning") Spotify Auth

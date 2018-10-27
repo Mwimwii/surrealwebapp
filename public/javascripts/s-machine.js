@@ -1,4 +1,6 @@
-// --- reserved for tooltips JQuery JS function
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+});
 // Function for Toggling Panels
 function togglePanel(panelId, buttonId) {
     var p = document.getElementById(panelId);

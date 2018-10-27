@@ -28,22 +28,23 @@ router.get('/edit', authCheck, function(req, res, next) {
     });
 });
 
-// [ User Statistics ]
-// View User Statistics from Connected Apps & Website Use
-router.get('/stats', authCheck, function(req, res, next) {
-    res.render('views/user/stats/stats', {
-        title: 'USER STATISTICS',
-        alien: req.user
-    });
-});
+// // [ User Statistics ]
+// // View User Statistics from Connected Apps & Website Use
+// router.get('/stats', authCheck, function(req, res, next) {
+//     res.render('views/user/stats/stats', {
+//         title: 'USER STATISTICS',
+//         alien: req.user
+//     });
+// });
 
-// [ Statistics Map ]
-// View User Statistics on a Map
-router.get('/stats/map', authCheck, function(req, res, next) {
-    res.render('views/user/stats/map', {
-        title: 'STATISTICS MAP',
-        alien: req.user
-    });
-});
+// // [ Statistics Map ]
+// // View User Statistics on a Map
+
+// router.get('/stats/map', authCheck, function(req, res, next) {
+//     res.render('views/user/stats/map', {
+//         title: 'STATISTICS MAP',
+//         alien: req.user
+//     });
+// });
 
 module.exports = router;
