@@ -14,13 +14,8 @@ var userSchema = new Schema({
     googleImg: String,
     spotifyId: String,
     spotifyName: String,
-    spotifyImg: String,
-    // perms: {
-    //     isAdmin: false,
-    //     isManager: false,
-    //     isArtist: false,
-    //     isFan: true
-    // }
+    spotifyUrl: String,
+    spotifyImg: String
 });
 
 // mongo sees this model, and knows that a collection of these

@@ -48,6 +48,7 @@ app.set('view engine', 'pug');
 
 // [Set Up User Session & Options]
 app.use(cookieSession({
+    // age of cookie is a day
     maxAge: 24 * 60 * 60 * 1000,
     keys: [process.env.SESSION_COOKIE_KEY]
 }));
@@ -57,7 +58,8 @@ app.use(passport.session());
 // [Set Up Options & Lib]
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // [Set Up Static Files Route]

@@ -29,7 +29,9 @@ router.get('/google', passport.authenticate('google', {
 
 router.get('/google/redirect', passport.authenticate('google'),
     function(req, res) {
-        res.send('you reached the callback url');
+        // display user if user is found
+        // res.send(req.user);
+        res.redirect('/user');
     });
 
 // oAuth Spotify Login
@@ -52,7 +54,9 @@ router.get('/spotify', passport.authenticate('spotify', {
 
 router.get('/spotify/redirect', passport.authenticate('spotify'),
     function(req, res) {
-        res.send('you reached the callback url');
+        // display user if user is found
+        // res.send(req.user);
+        res.redirect('/user');
     });
 
 // export 
