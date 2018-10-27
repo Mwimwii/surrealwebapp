@@ -35,6 +35,7 @@ var passportSetup = require('./config/passport-setup');
 // [Import Routes]
 var indexRoutes = require('./routes');
 var userRoutes = require('./routes/user');
+var statsRoutes = require('./routes/user-stats');
 // var usersRoutes = require('./routes/users');
 var authRoutes = require('./routes/oauth');
 
@@ -68,6 +69,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // [Set Up Routes]
 app.use('/', indexRoutes);
 app.use('/user', userRoutes);
+app.use('/user/stats', statsRoutes);
 // app.use('/users', usersRoutes);
 app.use('/auth', authRoutes);
 

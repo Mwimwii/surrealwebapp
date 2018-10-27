@@ -51,6 +51,7 @@ hr {
 p {
     /* this might need to be changed, if styling on an a element needs to be unique */
     /* background: transparent!important; */
+    font-family: "Raleway";
     text-decoration: none;
     color: white;
 }
@@ -130,6 +131,23 @@ p {
     border-bottom-left-radius: .25rem!important;
 }
 
+.contentMap {
+    background: transparent!important;
+    background-color: transparent!important;
+    min-height: 100%!important;
+    max-height: 100%!important;
+    height: 500px;
+    /* padding: 10px!important; */
+    overflow: hidden!important;
+    border-left: 0px;
+    border-right: 1px;
+    border-top: 0px;
+    border-bottom: 1px;
+    border-color: white;
+    border-style: solid;
+    border-bottom-right-radius: .25rem!important;
+}
+
 
 /*  ============
     Main Section:           SideBar
@@ -197,4 +215,15 @@ p {
     /* so that there is a 15px margin
     between the top and bottom row of panels */
     margin-bottom: 15px;
+}
+
+
+/*  ===
+    MAP
+    ===  */
+
+#map {
+    border: 0px;
+    height: 100%!important;
+    width: 100%!important;
 }
