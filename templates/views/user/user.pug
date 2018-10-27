@@ -5,20 +5,20 @@ block sidebarMain
     div(id="user-sb")
         //- User SideBar Title
         div(id="user-sb-title")
-            //- if !alien
-            //-     h6(class="badge badge-warning") ERR: NO USER LOGGED IN
-            //- else if !alien.userName
-            //-     h6(class="badge badge-warning") ERR: CREATE A USERNAME
-            //- else
-            //-     h6(class="badge badge-success")= alien.userName
+            if !alien
+                h6(class="badge badge-warning") ERR: NO USER LOGGED IN
+            else if !alien.userName
+                h6(class="badge badge-warning") ERR: CREATE A USERNAME
+            else
+                h6(class="badge badge-success")= alien.userName
         div(id="user-sb-body")
-            //- if !alien.googleId
-            //-     div(class="btn-group", role="group")
-            //-         button(type="button", class="btn btn-surreal-danger")
-            //-             i(class="fab fa-google-plus-g")
-            //-         button(type="button", class="btn btn-surreal-warning")
-            //-             a(href="/auth/google")
-            //-                 p Connect Google Account
+            if !alien.googleId
+                div(class="btn-group", role="group")
+                    button(type="button", class="btn btn-surreal-danger")
+                        i(class="fab fa-google-plus-g")
+                    button(type="button", class="btn btn-surreal-warning")
+                        a(href="/auth/google")
+                            p Connect Google Account
 block contentMain
 
     
@@ -32,3 +32,11 @@ block panel2
 block panel3
 
 block panel4
+
+block panel5
+
+block panel6
+
+block panel7
+
+block panel8

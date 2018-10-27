@@ -52,5 +52,26 @@ passport.use(new SpotifyStrategy({
         clientSecret: process.env.SPOTIFY_CLIENT_SECRET
     },
     function(accessToken, refreshToken, expires_in, profile, done) {
-        console.log(profile);
+        console.log('Spotify callback function fired');
+        // console.log(profile);
+        // a-syncronous task
+        // check if user exists
+        User.findOne({
+            spotifyId: profile.id
+        }).then(function(currentUser) {
+            if (currentUser) {
+                console.log('[User Found]> user is: ', currentUser);
+                done(null, currentUser);
+            } else {
+                new User({
+                    spotifyId: profile.id,
+                    spotifyName: profile.displayName,
+                    spotifyUrl: profile.profileUrl,
+                    spotifyImg: profile.photos
+                }).save().then(function(newUser) {
+                    console.log('new user created from spotify: ' + newUser);
+                    done(null, newUser);
+                })
+            }
+        })
     }));
