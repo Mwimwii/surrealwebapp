@@ -24,11 +24,12 @@ block loginMain
                         button(type="button", class="btn btn-info")
                             h6(class="badge badge-danger") required
                     hr
-                    form()
+                    //- form()
+                    a(href="/auth/google", class="badge badge-warning") Google Auth
+                    a(href="/auth/spotify", class="badge badge-warning") Spotify Auth
                 else
                     //- view your user account {link to /user}
                     //- edit your user account {link to /user/edit}
-                    p you don't need to be here, and there isn't a link to this page when you're logged in.... hmmm....
             div(class="col-6 contentMaininfo")
                 //- display information about the form in here
 
