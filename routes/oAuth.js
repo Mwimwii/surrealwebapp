@@ -6,8 +6,19 @@ var passport = require('passport');
  * aswell as third-party app connections
  */
 
+// secure page to logged in users only
+var authCheck = function(req, res, next) {
+    if (!req.user) {
+        // if user is not logged in
+        next();
+    } else {
+        // if user is logged in
+        res.redirect('/');
+    }
+};
+
 // oAuth Login
-router.get('/login', function(req, res) {
+router.get('/login', authCheck, function(req, res) {
     res.render('views/auth/login', { title: 'Login' });
 });
 // oAuth Logout
@@ -23,7 +34,7 @@ router.get('/logout', function(req, res) {
 
 // oAuth Google Login
 // ==================
-router.get('/google', passport.authenticate('google', {
+router.get('/google', authCheck, passport.authenticate('google', {
     scope: ['profile']
 }));
 
@@ -36,7 +47,7 @@ router.get('/google/redirect', passport.authenticate('google'),
 
 // oAuth Spotify Login
 // ===================
-router.get('/spotify', passport.authenticate('spotify', {
+router.get('/spotify', authCheck, passport.authenticate('spotify', {
     scope: [
         'user-read-private',
         'user-read-birthdate',
@@ -59,5 +70,5 @@ router.get('/spotify/redirect', passport.authenticate('spotify'),
         res.redirect('/user');
     });
 
-// export 
+// export router
 module.exports = router;
