@@ -4,10 +4,10 @@ var router = express.Router();
 // secure page to logged in users only
 var authCheck = function(req, res, next) {
     if (!req.user) {
-        //if user is not logged in
+        // if user is not logged in
         res.redirect('/auth/login');
     } else {
-        //if they are logged in
+        // if user is logged in
         next();
     }
 };

@@ -2,7 +2,7 @@ extends ../layout/default
 
 block sidebarMain
     div(class="sidebarMain")
-        if !alien.displayName
+        if !alien
             h6(class="badge badge-warning") User
         else
             h6(class="badge badge-success")= alien.userName

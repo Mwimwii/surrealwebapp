@@ -1,49 +1,51 @@
-extends ../../layout/default
-//- "alien" = "user"
-block sidebarMain
-    div(class="sidebarMain")
-        h6(class="badge badge-success") LOGIN
-        hr
-        if !alien
-            p you are not logged in
-            p create an account with google or spotify below
-            a(href="/auth/google", class="badge badge-warning") Google Auth
-            a(href="/auth/spotify", class="badge badge-warning") Spotify Auth
-        else
-            p you are logged in
+extends ../../layout/login
 
-block contentMain
+block loginMain
     //- div element between row/col sequence
-    div(class="contentMain")
+    div(class="loginMain")
         //- title of contentMain
         div(class="row")
-            div(class="col-6 contentMaintitle")
+            //- body of contentMain
+            div(class="col-12 contentMaintitle")
+                //- if no alien(user), create an account 
                 if !alien
-                    h6(class="badge badge-danger") no user detected!
-                    h6(class="badge badge-warning") log in or create an account
-                    hr
+                    h6(class="badge badge-info") Create an Account
                 else
-                    h6(class="badge badge-success") logged in
-                    hr
-        div(class="row")
-            div(class="col-6 contentMaininfo")    
-
+                    h6(class="badge badge-info") Already logged In
         //- body of contentMain
-        div(class="contentMainbody")
-            if !alien
-                //- sign up form
-
+        div(class="row")
+            div(class="col-6 contentMaintitle")
+                //- if no alien(user), display form to create an account
+                if !alien
+                    //- Create an Account Body
+                    div(class="btn-group", role="group", aria-label="Form Information")
+                        button(type="button", class="btn btn-info")
+                            h6(class="badge badge-warning") optional
+                        button(type="button", class="btn btn-info")
+                            h6(class="badge badge-danger") required
+                    hr
+                    form()
+                else
+                    //- view your user account {link to /user}
+                    //- edit your user account {link to /user/edit}
+                    p you don't need to be here, and there isn't a link to this page when you're logged in.... hmmm....
+            div(class="col-6 contentMaininfo")
+                //- display information about the form in here
 
 block panel1
-    div(class="panel panel-default rounded", id="panel-one")
+    div(class="panel panel-default rounded invisible", id="panel-one")
         div(class="panelTitle")
             h6 hello 1
         div(class="panelBody")
             p ayylmao ayylmao ayylmao ayylmao ayylmao
 
 block panel2
-    div(class="panel panel-default rounded", id="panel-one")
+    div(class="panel panel-default rounded visible", id="panel-two")
         div(class="panelTitle")
-            h6 hello 2
+            h6(class="badge badge-success") LOGIN
         div(class="panelBody")
-            p ayylmao ayylmao ayylmaoooo
+            if !alien
+                p please create an account or login below
+            else
+                p= alien.userName
+                
