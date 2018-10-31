@@ -21,18 +21,53 @@ block sidebarMain
                             p Connect Google Account
 block contentMain
 
-    div(class="user-cm")
-        div(class="user-cm-title")
+    div(class="userMain")
+        div(class="user-cm")
+            div(class="user-cm-title")
 
-        div(class="user-cm-body")
-
-    
+            div(class="user-cm-body")
 
 block panel1
-
-    p ayylmao
+    div(class="panel panel-default rounded invisible", id="panel-one")
+        div(class="panelTitle")
+        div(class="panelBody")
 
 block panel2
+    //- [Panel: User App Connections]
+    div(class="panel panel-default rounded visible", id="panel-two")
+        //- Panel: Title 
+        div(class="panelTitle")
+            h6(class="badge badge-success") Connected Apps
+        //- Panel: Body (List of App Connections)
+        div(class="panelBody")
+            //- ...
+            //- [Google+ User Connection]
+            if !alien.googleId
+                //- tests with btn-group
+                div(class="btn-group", role="group")
+                    i(class="fab fa-google-plus-g")
+                    div(class="media-body")
+            else
+                div(class="media")
+                    img(class="mr-3 panel-img rounded-left", src=alien.googleImg)
+                    div(class="media-body rounded-right")
+                        div(class="row")
+                            div(class="col-6")
+                                h6(class="mt-0 badge badge-success")= alien.googleName
+                            div(class="col-6")
+            //- ...
+            //- [Spotify User Connection]
+            if !alien.spotifyId
+                //- display nothing (next)
+            else
+                div(class="media")
+                    img(class="mr-3 panel-img", src=alien.spotifyImg)
+                    div(class="media-body")
+                        h6(class="mt-0 badge badge-success")= alien.spotifyName
+            //- [SoundCloud User Connection]
+            div(class="btn-group", role="group")
+                //- change to img when api re-opens
+                i(class="fa fa-exclamation-triangle")
 
 block panel3
 

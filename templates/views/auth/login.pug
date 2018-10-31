@@ -2,7 +2,7 @@ extends ../../layout/login
 
 block loginMain
     //- div element between row/col sequence
-    div(class="loginMain")
+    div(class="loginMain rounded-bottom")
         //- title of contentMain
         div(class="row")
             //- body of contentMain
@@ -14,22 +14,18 @@ block loginMain
                     h6(class="badge badge-info") Already logged In
         //- body of contentMain
         div(class="row")
-            div(class="col-6 contentMaintitle")
-                //- if no alien(user), display form to create an account
-                if !alien
-                    //- Create an Account Body
-                    div(class="btn-group", role="group", aria-label="Form Information")
-                        button(type="button", class="btn btn-info")
-                            h6(class="badge badge-warning") optional
-                        button(type="button", class="btn btn-info")
-                            h6(class="badge badge-danger") required
-                    hr
-                    //- form()
-                    a(href="/auth/google", class="badge badge-warning") Google Auth
-                    a(href="/auth/spotify", class="badge badge-warning") Spotify Auth
-                else
-                    //- view your user account {link to /user}
-                    //- edit your user account {link to /user/edit}
+            div(class="col-6")
+                div(class="contentMaintitle")
+                    //- if no alien(user), display form to create an account
+                    if !alien
+                        
+                        hr
+                        //- form()
+                        a(href="/auth/google", class="badge badge-warning") Google Auth
+                        a(href="/auth/spotify", class="badge badge-warning") Spotify Auth
+                    else
+                        //- view your user account {link to /user}
+                        //- edit your user account {link to /user/edit}
             div(class="col-6 contentMaininfo")
                 //- display information about the form in here
 
