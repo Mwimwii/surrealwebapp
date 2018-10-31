@@ -17,7 +17,8 @@ var authCheck = function(req, res, next) {
 router.get('/', authCheck, function(req, res, next) {
     res.render('views/user/user', {
         title: 'USER PROFILE',
-        alien: req.user
+        alien: req.user,
+        imgurl: req.user.googleImg
     });
 });
 
