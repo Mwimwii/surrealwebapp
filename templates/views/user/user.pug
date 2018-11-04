@@ -1,24 +1,25 @@
 extends ../../layout/default
 
 block sidebarMain
-    //- Styling for the "/user" page Sidebar
-    div(id="user-sb")
-        //- User SideBar Title
-        div(id="user-sb-title")
-            if !alien
-                h6(class="badge badge-warning") ERR: NO USER LOGGED IN
-            else if !alien.userName
-                h6(class="badge badge-warning") ERR: CREATE A USERNAME
-            else
-                h6(class="badge badge-success")= alien.userName
-        div(id="user-sb-body")
-            if !alien.googleId
-                div(class="btn-group", role="group")
-                    button(type="button", class="btn btn-surreal-danger")
-                        i(class="fab fa-google-plus-g")
-                    button(type="button", class="btn btn-surreal-warning")
-                        a(href="/auth/google")
-                            p Connect Google Account
+    div(class="sidebarMain")
+        //- Styling for the "/user" page Sidebar
+        div(id="user-sb")
+            //- User SideBar Title
+            div(id="user-sb-title")
+                if !alien
+                    h6(class="badge badge-warning") ERR: NO USER LOGGED IN
+                else if !alien.userName
+                    h6(class="badge badge-warning") ERR: CREATE A USERNAME
+                else
+                    h6(class="badge badge-success")= alien.userName
+            div(id="user-sb-body")
+                if !alien.googleId
+                    div(class="btn-group", role="group")
+                        button(type="button", class="btn btn-surreal-danger")
+                            i(class="fab fa-google-plus-g")
+                        button(type="button", class="btn btn-surreal-warning")
+                            a(href="/auth/google")
+                                p Connect Google Account
 block contentMain
 
     div(class="userMain")
@@ -51,10 +52,11 @@ block panel2
                 div(class="media")
                     img(class="mr-3 panel-img rounded-left", src=alien.googleImg)
                     div(class="media-body rounded-right")
-                        div(class="row")
+                        div(class="row no-gutters")
                             div(class="col-6")
                                 h6(class="mt-0 badge badge-success")= alien.googleName
                             div(class="col-6")
+                                
             //- ...
             //- [Spotify User Connection]
             if !alien.spotifyId

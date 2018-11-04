@@ -14,6 +14,7 @@ var cookieSession = require('cookie-session');
 var passport = require('passport');
 
 // [Databse]
+// =========
 var mongodb = require('mongoose');
 // connect to database (mongodb)
 var mdb = "[MongoDB] ";
@@ -22,6 +23,7 @@ db_failure = "Error Connecting to the Database... ";
 // art.style(db_success, 'green');
 // art.style(db_failure, 'red');
 mongodb.connect(process.env.MONGODB_URL, function(error) {
+    // useMongoClient: true;
     if (error) {
         console.log(mdb + db_failure + error);
     } else {

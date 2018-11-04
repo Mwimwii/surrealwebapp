@@ -205,6 +205,8 @@ p {
     max-height: 25px;
     min-height: 25px;
     height: 25px;
+    /* margin 0 removes mr-3 class margins */
+    margin: 0px!important;
 }
 
 
