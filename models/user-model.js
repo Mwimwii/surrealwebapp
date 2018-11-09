@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+// var bcrypt = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 
 // Schema for the User Model
@@ -6,7 +7,9 @@ var userSchema = new Schema({
     userImg: String,
     userName: String,
     userEmail: String,
-    userPass: String,
+    userPass: {
+        type: String
+    },
     phoneNum: Number,
     userCountry: String,
     googleId: String,
@@ -17,6 +20,10 @@ var userSchema = new Schema({
     spotifyUrl: String,
     spotifyImg: String
 });
+
+userSchema.methods.hashPassword = function() {
+
+};
 
 // mongo sees this model, and knows that a collection of these
 // "user" models will be called "users"

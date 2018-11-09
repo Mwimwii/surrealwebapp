@@ -6,8 +6,7 @@ var Schema = mongoose.Schema;
 var mapSchema = new Schema({
     maxZoom: Number,
     minZoom: Number,
-    Zoom: Number,
-
+    Zoom: Number
 });
 
 // mongo sees this model, and knows that a collection of these

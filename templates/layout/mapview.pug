@@ -1,0 +1,148 @@
+doctype html
+html
+    head
+    
+        //- Meta
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        //- Title of Web Page
+        title= title
+        //- Favicon Icon
+        link(rel="icon", href="/favicon.ico", type="image/x-icon")
+        //- Bootstrap v4.1.3 CSS
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", crossorigin="anonymous")
+        //- Custom StyleSheet
+        link(rel="stylesheet", href="/stylesheets/style.css")
+        //- Raleway Font
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Raleway")
+        //- Font-Awesome Icons
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.4.1/css/all.css", integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz", crossorigin="anonymous")
+        //- For Testing a 3d globe
+        script(src="https://d3js.org/d3.v5.js")
+        //- If Needed
+        block css
+
+        block head
+
+    //- [BODY]
+    body
+
+        //- Container-Fluid (Full Width)
+        div(class="container-fluid")
+
+            //- Header
+            div(class="row no-gutters")
+                //- Empty Column
+                div(class="col-2")
+                //- Site Navigation
+                div(class="col-8")
+                    //- Navigation Content
+                    
+                    //-  \[ TODO ]/ Make Navigation
+
+                //- Empty Column
+                div(class="col-2")
+            
+            //- Main Section
+            div(class="row no-gutters")
+                //- Left Panels
+                div(class="col-2")
+                    //- top row
+                    div(class="row", id="panelrowtop")
+
+                        div(class="col-6 no-padd-right")
+                            block panel1
+
+                        div(class="col-6 no-padd-right")
+                            block panel2
+                    //- bottom row
+                    div(class="row")
+
+                        div(class="col-6 no-padd-right")
+                            block panel3
+
+                        div(class="col-6 no-padd-right")
+                            block panel4
+
+                //- Website Focus
+                div(class="col-6")
+                    //- Top Navigation
+                    div(class="row border border-white rounded-top no-gutters")
+                        //- Alt Navigation (Button Icons)
+                        div(class="col-2")
+                            //- Button Group
+                            div(class="btn-group btn-group-sm")
+                                button(type="button", class="btn btn-surreal")
+                                    a(href="/")
+                                        i(class="fa fa-campground")
+                                if !alien
+                                    //- login
+                                    button(type="button", class="btn btn-surreal")
+                                        a(href="/auth/login")
+                                            i(class="fas fa-sign-in-alt")
+                                else
+                                    //- user profile
+                                    button(type="button", class="btn btn-surreal")
+                                        a(href="/user")
+                                            i(class="fas fa-user")
+                                    //- log out
+                                    button(type="button", class="btn btn-surreal")
+                                        a(href="/auth/logout")
+                                            i(class="fas fa-sign-out-alt")
+                        //- Main Navigation (Web Links)
+                        div(class="col-10")
+                            //- Navbar
+                            div(class="")
+                    //- Main Website
+                    div(class="row no-gutters")
+                        //- Sidebar Section
+                        div(class="col-2")
+                            //- Main Sidebar
+                            block sidebarMain
+                        
+                        //- Content Section
+                        div(class="col-10")
+                            //- Main Content
+                            block contentMain
+                    
+                    //- Bottom Navigation
+                    div(class="row no-gutters")
+                        //- (!) Edit Footer Area Later
+
+
+                //- Right Panels
+                div(class="col-3")
+                    //- top row
+                    div(class="row", id="panelrowtop")
+
+                        div(class="col-6 no-padd-left")
+                            block panel5
+
+                        div(class="col-6 no-padd-left")
+                            block panel6
+                    //- bottom row
+                    div(class="row")
+
+                        div(class="col-6 no-padd-left")
+                            block panel7
+
+                        div(class="col-6 no-padd-left")
+                            block panel8
+            //- Footer Row
+            div(class="row")
+                div(class="col-12")
+                    div(id="siteFooter")
+                        block footer
+        //- JAVASCRIPT
+        //- ==========
+        //- JQUERY.JS
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        //- POPPER.JS
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        //- BOOTSTRAP.JS
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        //- S-MACHINE.JS
+        script(src="/javascripts/s-machine.js")
+        //- CUSTOM JS FILES IF NEEDED FOR WEB PAGES
+        block js

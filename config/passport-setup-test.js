@@ -41,23 +41,23 @@ passport.use(new GoogleStrategy({
         console.log('Google callback function fired');
         // console.log(profile);
         // check if user exists in database
-        User.findOne({
+        User.findOneAndUpdate({
             googleId: profile.id
         }).then(function(currentUser) {
             if (currentUser) {
                 // user exists
-                console.log('[User Found]> user is: ', currentUser);
-                done(null, currentUser);
-            } else {
-                // user doesn't exist, so create one
+                console.log('[User Found] user is: ', currentUser);
                 new User({
                     googleId: profile.id,
                     googleName: profile.displayName,
                     googleImg: profile._json.image.url
-                }).save().then(function(newUser) {
-                    console.log('new user created: ' + newUser);
-                    done(null, newUser);
-                })
+                }).save().then(function() {
+                    console.log(currentUser + ' has been updated with google connection');
+                });
+                done(null, currentUser);
+            } else {
+                // user doesn't exist
+                console.log('[User Not Found]');
             }
         })
     }));

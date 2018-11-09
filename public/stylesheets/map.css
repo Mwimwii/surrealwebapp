@@ -1,3 +1,9 @@
 .leaflet-container {
+    /* changes the font for everything on the map */
     font-family: "Raleway";
+}
+
+.leaflet-popup-content>p {
+    text-decoration: none;
+    color: black!important;
 }
