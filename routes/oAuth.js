@@ -17,15 +17,19 @@ var authCheck = function(req, res, next) {
     }
 };
 
-// oAuth Login
-router.get('/login', authCheck, function(req, res) {
-    res.render('views/auth/login', { title: 'Login' });
+// oAuth Sign In
+router.get('/signin', authCheck, function(req, res) {
+    res.render('views/auth/signin', { title: 'Login' });
 });
-// oAuth Logout
-router.get('/logout', function(req, res) {
+// oAuth Sign Up
+router.get('/signup', authCheck, function(req, res) {
+    res.render('views/auth/signup', { title: 'Sign Up' });
+});
+// oAuth Sign Out
+router.get('/signout', function(req, res) {
     req.logout();
-    console.log('user logged out');
-    res.redirect('/');
+    console.log('signed a user out');
+    res.redirect('/signin');
 });
 
 // == Third Party Login Options

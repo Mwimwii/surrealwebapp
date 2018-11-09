@@ -4,7 +4,7 @@ block loginMain
     //- div element between row/col sequence
     div(class="loginMain rounded-bottom")
         //- title of contentMain
-        div(class="row")
+        div(class="row no-gutters")
             //- body of contentMain
             div(class="col-12 contentMaintitle")
                 //- if no alien(user), create an account 
@@ -13,19 +13,19 @@ block loginMain
                 else
                     h6(class="badge badge-info") Already logged In
         //- body of contentMain
-        div(class="row")
+        div(class="row no-gutters")
             div(class="col-6")
                 div(class="contentMaintitle")
                     //- if no alien(user), display form to create an account
                     if !alien
-                        
-                        hr
-                        //- form()
-                        a(href="/auth/google", class="badge badge-warning") Google Auth
-                        a(href="/auth/spotify", class="badge badge-warning") Spotify Auth
+                        form(action="/auth", method="post")
+                            input(type="text", name="userName")
+                            input(type="text", name="userPass")
+                            input(type="submit", name="submit")
+                        //- a(href="/auth/google", class="badge badge-warning") Google Auth
+                        //- a(href="/auth/spotify", class="badge badge-warning") Spotify Auth
                     else
-                        //- view your user account {link to /user}
-                        //- edit your user account {link to /user/edit}
+                        //- do nothing because it should redirect the user to the user page
             div(class="col-6 contentMaininfo")
                 //- display information about the form in here
 
